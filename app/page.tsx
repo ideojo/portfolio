@@ -1,69 +1,65 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ticketTracker from "../public/tickettracker.png";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
+    <main className={styles.main}>
+      <section className={styles.intro}>
+        <h1>Sachin Tomy</h1>
+        <p>
+          Computer Science student at Sacramento State and IT help desk
+          student assistant in California state government. I build web
+          apps in C# and Blazor, and this site is my first in React and
+          Next.js.
+        </p>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <article className={styles.project}>
+          <h3>TicketTracker</h3>
+          <Image
+            src={ticketTracker}
+            alt="TicketTracker's Tickets page, with a new-ticket form and a table of tickets"
+            className={styles.screenshot}
+          />
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            A help desk ticketing app built with Blazor Server, C#, and
+            Bootstrap. Create tickets, update their status, and see inline
+            validation errors.
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+          <a href="https://github.com/ideojo/TicketTracker">
+            TicketTracker code on GitHub
           </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </article>
+
+        <article className={styles.project}>
+          <h3>CPR Lifeline</h3>
+          <p>
+            A 7-person team project in my Software Engineering class, built
+            with Python and Playwright. It logs into the American Heart
+            Association instructor portal (Atlas), goes through each CPR
+            class, accepts the enrollments, and sends the roster data to
+            Google Sheets.
+          </p>
+          <p>
+            My part was the login and the roster collection: signing in,
+            paging through the class rosters, and cleaning up the data
+            before it went to Google Sheets.
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <ul className={styles.links}>
+          <li>
+            <a href="https://github.com/ideojo">GitHub</a>
+          </li>
+        </ul>
+      </section>
+    </main>
   );
 }
